@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="25.5355in" height="29.4858in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 25535.49 29485.83"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:black;stroke-width:1388.89;stroke-miterlimit:2.61313}
+    .str1 {stroke:#8C8C8C;stroke-width:1638.89;stroke-miterlimit:2.61313}
+    .fil0 {fill:none}
+   ]]>
+  </style>
+ </defs>
+ <g id="logo">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <path class="fil0 str0" d="M19901.96 10623.97l-2063.76 1191.52m-10021.97 68.67l-2182.7 -1260.19"/>
+  <line class="fil0 str0" x1="12767.74" y1="6505.02" x2="12767.74" y2= "801.87" />
+  <line class="fil0 str0" x1="12767.74" y1="14742.91" x2="12767.74" y2= "22980.8" />
+  <polyline class="fil0 str0" points="17889.76,11785.72 12767.74,14742.91 7778.79,11862.54 "/>
+  <polygon class="fil0 str0" points="12767.74,6505.02 16334.85,8564.5 19901.96,10623.97 19901.96,14742.91 19901.96,18861.86 16334.85,20921.33 12767.74,22980.8 9200.63,20921.33 5633.52,18861.86 5633.52,14742.91 5633.52,10623.97 9200.63,8564.5 "/>
+  <path class="fil0 str1" d="M19660.96 20340.52c2711.5,0 4487.93,-2353.55 4487.93,-5262.37 0,-2908.82 -1980.4,-5271.42 -4691.9,-5271.42 -5981.9,273.83 -7834.15,10533.79 -13364.74,10533.79 -2711.5,0 -4705.64,-2358.07 -4705.64,-5266.89 0,-2908.82 2198.11,-5266.9 4909.62,-5266.9 5375.78,330.98 7795.44,10533.79 13364.74,10533.79z"/>
+  <line class="fil0 str0" x1="694.45" y1="21713.44" x2="5633.52" y2= "18861.86" />
+  <line class="fil0 str0" x1="19901.96" y1="18861.86" x2="24841.04" y2= "21713.44" />
+  <line class="fil0 str0" x1="694.44" y1="7772.39" x2="7496.92" y2= "11699.8" />
+  <line class="fil0 str0" x1="17557.13" y1="11977.76" x2="24841.04" y2= "7772.39" />
+  <polygon class="fil0 str0" points="12767.74,801.87 18804.39,4287.13 24841.04,7772.39 24841.04,14742.91 24841.04,21713.44 18804.39,25198.7 12767.74,28683.96 6731.09,25198.7 694.44,21713.44 694.44,14742.91 694.44,7772.39 6731.09,4287.13 "/>
+ </g>
+</svg>

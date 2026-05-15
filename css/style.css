@@ -1,0 +1,606 @@
+/* ЗМІСТ
+---- Базові налаштування
+---- CSS-змінні
+---- Основні частини сторінки
+-------- Тіло
+-------- Заголовок
+-------- Головна секція
+-------- Бічна навігація
+-------- Стаття
+-------- Нижній колонтинул
+---- Заголовки
+---- Посилання
+---- Зображення
+---- Блоки
+---- Згортаний контент
+---- Складність виживання
+-------- Топологія
+-------- Складність
+-------- Контур
+-------- Зірки
+-------- Блок зображення
+*/
+
+/* === Базові налаштування === */
+* {
+    box-sizing: border-box;
+}
+
+/* === CSS-змінні === */
+:root {
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --monospace-font-family: Consolas, monospace;
+    --bg-color: 237, 233, 223;
+    --header-bg-color: 48, 45, 37;
+    --text-color: 33, 37, 41;
+    --header-color: 0, 0, 0;
+    --link-color: 0, 123, 255;
+    --inactive-link-color: 186, 0, 0;
+    --link-hover-color: 0, 86, 179;
+    --interface-link-color: 128, 128, 128;
+    --interface-link-hover-color: 68, 68, 68;
+    --interface-border-color: 229, 229, 229;
+    --header-border-color: 162, 169, 177;
+    --block-bg-color: 248, 249, 250;
+    --block-border-color: 234, 236, 240;
+}
+
+/* === Основні частини сторінки === */
+
+/* Тіло */
+body {
+    margin: 0;
+    line-height: 1.5;
+    font-family: var(--font-family);
+    word-wrap: break-word;
+    background: rgb(var(--bg-color));
+    color: rgb(var(--text-color));
+}
+
+/* Заголовок */
+header {
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    font-weight: bold;
+    background: rgb(var(--header-bg-color));
+    color: white;
+}
+
+header a, header a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: none;
+}
+
+header input {
+    height: 40px;
+    padding: 8px 16px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    color: rgb(73, 80, 87);
+    border: 1px solid rgb(206, 212, 218);
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    user-select: none;
+}
+
+header input::placeholder {
+    font-size: 1rem;
+}
+
+header input:focus {
+    outline: 0;
+    border-color: rgb(128, 189, 255);
+    box-shadow: 0 0 0 4px rgba(var(--link-color), 0.25);
+}
+
+/* Головна секція */
+main {
+    display: flex;
+}
+
+/* Бічна навігація */
+main [data-include] {
+    width: 15%;
+}
+
+aside {
+    height: 100%;
+    padding: 16px;
+    border-right: 2px solid rgb(var(--interface-border-color));
+}
+
+aside img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    user-select: none;
+}
+
+aside ul {
+    padding: 0;
+    padding-left: 10px;
+    list-style: none;
+}
+
+aside li {
+    padding: 4px 0;
+}
+
+aside li:first-child {
+    color: rgb(var(--interface-link-hover-color));
+}
+
+aside li a {
+    color: rgb(var(--interface-link-color));
+    text-decoration: none;
+}
+
+aside li a:hover {
+    color: rgb(var(--interface-link-hover-color));
+    text-decoration: none;
+}
+
+/* Стаття */
+article {
+    width: 75%;
+    padding: 16px 10%;
+}
+
+/* Нижній колонтинул */
+footer {
+    display: flex;
+    padding: 10px;
+    font-size: 0.625rem;
+    font-weight: bold;
+    border-top: 2px solid rgb(var(--interface-border-color));
+}
+
+footer a {
+    margin: 16px;
+    color: rgb(var(--interface-link-color));
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: rgb(var(--interface-link-hover-color));
+    text-decoration: none;
+}
+
+/* === Заголовки === */
+h1, h2, h3, h4, h5, h6, .page-title {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+    font-weight: 500;
+    color: rgb(var(--header-color));
+}
+
+h1, h2 {
+    border-bottom: 1px solid rgb(var(--header-border-color));
+}
+
+h1 {
+    font-size: 1.9rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 1.1rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+.page-title {
+    padding-top: 16px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgb(var(--header-border-color));
+}
+
+/* === Посилання === */
+a.active {
+    color: rgb(var(--link-color));
+    text-decoration: none;
+}
+
+a.active:hover {
+    color: rgb(var(--link-hover-color));
+    text-decoration: underline;
+}
+
+a.inactive {
+    color: rgb(var(--inactive-link-color));
+    text-decoration: none;
+}
+
+a.inactive:hover {
+    color: rgb(var(--link-hover-color));
+    text-decoration: underline;
+}
+
+/* === Зображення === */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* === Блоки === */
+.block {
+    padding: 5px;
+    font-size: 0.95rem;
+    background: rgb(var(--block-bg-color));
+    border: 1px solid rgb(var(--header-border-color));
+}
+
+pre {
+    margin: 16px 0;
+    padding: 10px;
+    font-family: var(--monospace-font-family);
+    font-size: 0.85rem;
+    background: rgb(var(--block-bg-color));
+    border: 1px solid rgb(var(--block-border-color));
+    white-space: wrap;
+}
+
+code {
+    padding: 2px 4px;
+    font-family: var(--monospace-font-family);
+    font-size: 0.85rem;
+    background: rgb(var(--block-bg-color));
+    color: rgb(232, 62, 140);
+    border: 1px solid rgb(var(--block-border-color));
+    border-radius: 2px;
+}
+
+/* === Згортаний контент === */
+.collapsible-toggle {
+    float: right;
+    color: rgb(var(--link-color));
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapsible-toggle:hover {
+    color: rgb(var(--link-hover-color));
+    text-decoration: underline;
+}
+
+.collapsible-toggle::before, .collapsible-toggle::after {
+    color: rgb(var(--text-color));
+}
+
+.collapsible-toggle::before {
+    content: "[";
+}
+
+.collapsible-toggle::after {
+    content: "]";
+}
+
+.collapsed .collapsible-content {
+    display: none;
+}
+
+/* === Складність виживання === */
+.survival-difficulty {
+    position: relative;
+    margin-bottom: 100px;
+    line-height: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.sd-rectangle {
+    margin-bottom: 40px;
+    padding: 15px 10px;
+    font-size: 36px;
+    font-weight: bold;
+    background: rgb(var(--sd-bg-color));
+    border-top: 16px solid rgb(var(--sd-border-color));
+    border-right: 8px solid rgb(var(--sd-border-color));
+    border-bottom: 16px solid rgb(var(--sd-border-color));
+    border-left: 8px solid rgb(var(--sd-border-color));
+}
+
+.sd-list {
+    margin-top: 0;
+    margin-bottom: 16px;
+    margin-left: 45px;
+    padding: 0;
+    font-size: 30px;
+}
+
+.sd-list li {
+    padding-left: 16px;
+}
+
+.sd-list li::marker {
+    content: "\25c6";
+    color: rgb(79, 112, 142);
+}
+
+.sd-square {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 215px;
+    height: 215px;
+    margin-top: 16px;
+    margin-right: 50px;
+    background: rgb(var(--sd-bg-color));
+    border-radius: 16px;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.sd-image {
+    width: 85%;
+    height: 85%;
+    margin: 7.5%;
+    background: var(--sd-topology-img) center/contain no-repeat;
+    transform: rotate(-45deg);
+}
+
+.sd-line-left, .sd-line-right {
+    position: absolute;
+    background: rgb(var(--sd-border-color));
+    z-index: 2;
+}
+
+.sd-line-left {
+    height: 125px;
+    width: 0;
+    border-right: 10px solid rgb(var(--sd-border-color));
+}
+
+.sd-line-left.first {
+    top: 55px;
+    left: -10px;
+}
+
+.sd-line-left.second {
+    top: 80px;
+    left: -30px;
+}
+
+.sd-line-right {
+    width: 125px;
+    height: 0;
+    border-top: 10px solid rgb(var(--sd-border-color));
+}
+
+.sd-line-right.first {
+    top: -10px;
+    left: 55px;
+}
+
+.sd-line-right.second {
+    top: -30px;
+    left: 80px;
+    width: 110px;
+}
+
+.sd-star {
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    background: url(https://backrooms.ru/extensions/ClassesExtension/resources/star.png?27c66) center/contain no-repeat;
+    transform: rotate(-45deg);
+    z-index: 3;
+}
+
+.sd-star.top {
+    display: var(--sd-top-star-display);
+    top: 8px;
+    left: 8px;
+}
+
+.sd-star.bottom {
+    display: var(--sd-bottom-star-display);
+    right: 8px;
+    bottom: 8px;
+}
+
+.sd-star.left {
+    display: var(--sd-left-star-display);
+    bottom: 8px;
+    left: 8px;
+}
+
+.sd-star.right {
+    display: var(--sd-right-star-display);
+    top: 8px;
+    right: 8px;
+}
+
+/* Топологія */
+.flat-contained {
+    --sd-topology-img: url(https://backrooms.ru/extensions/ClassesExtension/resources/img/topology_1_flatcont.svg?f85eb);
+}
+
+.flat-self-closed {
+    --sd-topology-img: url(https://backrooms.ru/extensions/ClassesExtension/resources/img/topology_2_flatselfclosed.svg?267b1);
+}
+
+.flat-infinite {
+    --sd-topology-img: url(https://backrooms.ru/extensions/ClassesExtension/resources/img/topology_3_flatinf.svg?55fe1);
+}
+
+.curved {
+    --sd-topology-img: url(https://backrooms.ru/extensions/ClassesExtension/resources/img/topology_4_curved.svg?ed821);
+}
+
+.unstable {
+    --sd-topology-img: url(https://backrooms.ru/extensions/ClassesExtension/resources/img/topology_5_unstable.svg?ad36e);
+}
+
+.undefined {
+    --sd-topology-img: url(https://backrooms.ru/extensions/ClassesExtension/resources/img/topology_6_undef.svg?b8ec8);
+}
+
+/* Складність */
+.class-0 {
+    --sd-bg-color: 237, 218, 184;
+}
+
+.class-0 .sd-rectangle::after {
+    content: "0";
+}
+
+.class-1 {
+    --sd-bg-color: 233, 187, 107;
+}
+
+.class-1 .sd-rectangle::after {
+    content: "1";
+}
+
+.class-2 {
+    --sd-bg-color: 227, 149, 1;
+}
+
+.class-2 .sd-rectangle::after {
+    content: "2";
+}
+
+.class-3 {
+    --sd-bg-color: 227, 106, 1;
+}
+
+.class-3 .sd-rectangle::after {
+    content: "3";
+}
+
+.class-4 {
+    --sd-bg-color: 227, 84, 1;
+}
+
+.class-4 .sd-rectangle::after {
+    content: "4";
+}
+
+.class-5 {
+    --sd-bg-color: 222, 62, 62;
+}
+
+.class-5 .sd-rectangle::after {
+    content: "5";
+}
+
+/* Контур */
+.border-black {
+    --sd-border-color: 27, 27, 27;
+}
+
+.border-yellow {
+    --sd-border-color: 145, 142, 0;
+}
+
+.border-orange {
+    --sd-border-color: 139, 79, 0;
+}
+
+.border-blue {
+    --sd-border-color: 63, 91, 118;
+}
+
+.border-dark-blue {
+    --sd-border-color: 17, 77, 132;
+}
+
+.border-green {
+    --sd-border-color: 23, 97, 54;
+}
+
+.border-emerald {
+    --sd-border-color: 43, 170, 103;
+}
+
+.border-white {
+    --sd-border-color: 165, 165, 165;
+}
+
+/* Зірки */
+.zero-stars {
+    --sd-top-star-display: none;
+    --sd-bottom-star-display: none;
+    --sd-left-star-display: none;
+    --sd-right-star-display: none;
+}
+
+.one-star {
+    --sd-top-star-display: block;
+    --sd-bottom-star-display: none;
+    --sd-left-star-display: none;
+    --sd-right-star-display: none;
+}
+
+.two-stars {
+    --sd-top-star-display: block;
+    --sd-bottom-star-display: block;
+    --sd-left-star-display: none;
+    --sd-right-star-display: none;
+}
+
+.three-stars {
+    --sd-top-star-display: block;
+    --sd-bottom-star-display: block;
+    --sd-left-star-display: block;
+    --sd-right-star-display: none;
+}
+
+.four-stars {
+    --sd-top-star-display: block;
+    --sd-bottom-star-display: block;
+    --sd-left-star-display: block;
+    --sd-right-star-display: block;
+}
+
+/* === Блок зображення === */
+figure {
+    width: 300px;
+    margin: 16px;
+    margin-right: 0;
+    padding: 4px;
+    float: right;
+    clear: right;
+    font-size: 0.8rem;
+    background: rgb(var(--block-bg-color));
+    border: 1px solid rgb(200, 204, 209);
+}
+
+figure img {
+    border: 1px solid rgb(200, 204, 209);
+}
+
+figcaption {
+    padding: 4px;
+}
+
+.magnify {
+    width: 15px;
+    height: 11px;
+    float: right;
+    background: url(https://backrooms.ru/resources/src/mediawiki.skinning/images/magnify-clip-ltr.svg?8330e) center/contain no-repeat;
+    user-select: none;
+}
