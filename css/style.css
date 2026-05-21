@@ -1,4 +1,5 @@
 /* ЗМІСТ
+---- Ін'єкція шрифтів
 ---- Базові налаштування
 ---- CSS-змінні
 ---- Основні частини сторінки
@@ -10,6 +11,7 @@
 -------- Нижній колонтинул
 ---- Заголовки
 ---- Посилання
+---- Модифікатори
 ---- Зображення
 ---- Блоки
 ---- Згортаний контент
@@ -19,7 +21,11 @@
 -------- Контур
 -------- Зірки
 -------- Блок зображення
+---- Галерея
 */
+
+/* === Ін'єкція шрифтів === */
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
 
 /* === Базові налаштування === */
 * {
@@ -238,6 +244,11 @@ a.inactive:hover {
     text-decoration: underline;
 }
 
+/* === Модифікатори === */
+[text-center] {
+    text-align: center;
+}
+
 /* === Зображення === */
 img {
     display: block;
@@ -327,6 +338,7 @@ code {
     margin-bottom: 16px;
     margin-left: 45px;
     padding: 0;
+    font-family: Roboto, sans-serif;
     font-size: 30px;
 }
 
@@ -353,7 +365,7 @@ code {
     z-index: 1;
 }
 
-.sd-image {
+.sd-topology {
     width: 85%;
     height: 85%;
     margin: 7.5%;
@@ -603,4 +615,29 @@ figcaption {
     float: right;
     background: url(https://backrooms.ru/resources/src/mediawiki.skinning/images/magnify-clip-ltr.svg?8330e) center/contain no-repeat;
     user-select: none;
+}
+
+/* === Галерея (нове) === */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 500px;
+    gap: 16px;
+    margin: 16px;
+}
+
+.gallery figure {
+    max-width: 150px;
+    margin: 0;
+    background: none;
+    border: 0;
+}
+
+.gallery a {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgb(var(--block-bg-color));
+    border: 1px solid rgb(200, 204, 209);
 }
