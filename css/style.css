@@ -588,6 +588,17 @@ code {
     --sd-right-star-display: block;
 }
 
+.unknown-stars {
+    --sd-top-star-display: block;
+    --sd-bottom-star-display: block;
+    --sd-left-star-display: block;
+    --sd-right-star-display: block;
+}
+
+.unknown-stars .sd-star {
+    background-image: url(https://backrooms.ru/extensions/ClassesExtension/resources/question_mark.svg?e1fca);
+}
+
 /* === Блок зображення === */
 figure {
     width: 300px;
