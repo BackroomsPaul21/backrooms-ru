@@ -617,13 +617,17 @@ figure img {
 }
 
 figcaption {
+    position: relative;
     padding: 4px;
+    padding-right: 20px;
 }
 
 .magnify {
+    position: absolute;
+    top: 4px;
+    right: 0;
     width: 15px;
     height: 11px;
-    float: right;
     background: url(https://backrooms.ru/resources/src/mediawiki.skinning/images/magnify-clip-ltr.svg?8330e) center/contain no-repeat;
     user-select: none;
 }
