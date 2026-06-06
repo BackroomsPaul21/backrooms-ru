@@ -1,6 +1,7 @@
 // ЗМІСТ
 // ---- Рядок пошуку
 // ---- Запуск навігації на мобільних пристроях
+// ---- Автокорекція абсолютних шляхів для GitHub Pages
 // ---- Перевірка активності посилань
 // ---- Ін'єкція повторюваних елементів
 // ---- Згорнутий зміст
@@ -132,6 +133,32 @@ function initiateNavigation() {
     });
 }
 
+// === Автокорекція абсолютних шляхів для GitHub Pages ===
+function fixGitHubPagesPaths() {
+    if (window.location.hostname.includes('github.io')) {
+        const repositoryName = '/' + window.location.pathname.split('/')[1] + '/';
+        const links = document.querySelectorAll('a[href^="/"], img[src^="/"]');
+
+        links.forEach(el => {
+            if (el.hasAttribute('href')) {
+                const currentHref = el.getAttribute('href');
+
+                if (currentHref.startsWith('/') && !currentHref.startsWith(repositoryName)) {
+                    el.setAttribute('href', repoName + currentHref.slice(1));
+                }
+            }
+
+            if (el.hasAttribute('src')) {
+                const currentSrc = el.getAttribute('src');
+
+                if (currentSrc.startsWith('/') && !currentSrc.startsWith(repositoryName)) {
+                    el.setAttribute('src', repositoryName + currentSrc.slice(1));
+                }
+            }
+        });
+    }
+}
+
 // === Перевірка активності посилань ===
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a').forEach(link => {
@@ -179,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 loadedCount++;
 
                 if (loadedCount === includes.length) {
+                    fixGitHubPagesPaths();
                     initiateSearch();
                     initiateNavigation();
                 }
