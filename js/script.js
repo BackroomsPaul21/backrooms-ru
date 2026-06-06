@@ -135,19 +135,19 @@ function initiateNavigation() {
 
 // === Автокорекція абсолютних шляхів для GitHub Pages ===
 function fixGitHubPagesPaths() {
-    if (window.location.hostname.includes('github.io')) {
-        const repositoryName = '/' + window.location.pathname.split('/')[1] + '/';
-        const links = document.querySelectorAll('a[href^="/"], img[src^="/"]');
+    const repositoryName = '/backrooms-ru/'; 
+
+    if (window.location.hostname.includes('github.io') || window.location.pathname.startsWith(repositoryName)) {
+        const links = document.querySelectorAll('a, img');
 
         links.forEach(el => {
             if (el.hasAttribute('href')) {
                 const currentHref = el.getAttribute('href');
 
                 if (currentHref.startsWith('/') && !currentHref.startsWith(repositoryName)) {
-                    el.setAttribute('href', repoName + currentHref.slice(1));
+                    el.setAttribute('href', repositoryName + currentHref.slice(1));
                 }
             }
-
             if (el.hasAttribute('src')) {
                 const currentSrc = el.getAttribute('src');
 
