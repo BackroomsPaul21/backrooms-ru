@@ -28,7 +28,6 @@
 -------- Головна секція
 -------- Бічна навігація
 -------- Стаття
--------- Складність виживання
 */
 
 /* === Ін'єкція шрифтів === */
@@ -332,35 +331,36 @@ code {
 /* === Складність виживання === */
 .survival-difficulty {
     position: relative;
-    margin-bottom: 100px;
+    width: 100%;
+    margin-bottom: 5vw;
     line-height: normal;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
 
 .sd-rectangle {
-    margin-bottom: 40px;
-    padding: 15px 10px;
-    font-size: 36px;
+    margin-bottom: 2vw;
+    padding: 1.5vw 1vw;
+    font-size: calc(0.5em + 1.5vw);
     font-weight: bold;
     background: rgb(var(--sd-bg-color));
-    border-top: 16px solid rgb(var(--sd-border-color));
-    border-right: 8px solid rgb(var(--sd-border-color));
-    border-bottom: 16px solid rgb(var(--sd-border-color));
-    border-left: 8px solid rgb(var(--sd-border-color));
+    border-top: 1vw solid rgb(var(--sd-border-color));
+    border-right: 0.5vw solid rgb(var(--sd-border-color));
+    border-bottom: 1vw solid rgb(var(--sd-border-color));
+    border-left: 0.5vw solid rgb(var(--sd-border-color));
 }
 
 .sd-list {
     margin-top: 0;
     margin-bottom: 16px;
-    margin-left: 45px;
+    margin-left: 35px;
     padding: 0;
     font-family: Roboto, sans-serif;
-    font-size: 30px;
+    font-size: calc(0.5em + 1.5vw);
 }
 
 .sd-list li {
-    padding-left: 16px;
+    padding-left: 1vw;
 }
 
 .sd-list li::marker {
@@ -372,10 +372,10 @@ code {
     position: absolute;
     top: 0;
     right: 0;
-    width: 215px;
-    height: 215px;
+    width: 15vw;
+    height: 15vw;
     margin-top: 16px;
-    margin-right: 50px;
+    margin-right: 3.5vw;
     background: rgb(var(--sd-bg-color));
     border-radius: 16px;
     transform: rotate(45deg);
@@ -397,36 +397,36 @@ code {
 }
 
 .sd-line-left {
-    height: 125px;
+    height: 8.8vw;
     width: 0;
-    border-right: 10px solid rgb(var(--sd-border-color));
+    border-right: 0.8vw solid rgb(var(--sd-border-color));
 }
 
 .sd-line-left.first {
-    top: 55px;
-    left: -10px;
+    top: 4vw;
+    left: -0.8vw;
 }
 
 .sd-line-left.second {
-    top: 80px;
-    left: -30px;
+    top: 5.5vw;
+    left: -2.4vw;
 }
 
 .sd-line-right {
-    width: 125px;
+    width: 8.8vw;
     height: 0;
-    border-top: 10px solid rgb(var(--sd-border-color));
+    border-top: 0.8vw solid rgb(var(--sd-border-color));
 }
 
 .sd-line-right.first {
-    top: -10px;
-    left: 55px;
+    top: -0.8vw;
+    left: 4vw;
 }
 
 .sd-line-right.second {
-    top: -30px;
-    left: 80px;
-    width: 110px;
+    top: -2.4vw;
+    left: 5.5vw;
+    width: 7.7vw;
 }
 
 .sd-star {
@@ -440,26 +440,26 @@ code {
 
 .sd-star.top {
     display: var(--sd-top-star-display);
-    top: 8px;
-    left: 8px;
+    top: 0.8vw;
+    left: 0.8vw;
 }
 
 .sd-star.bottom {
     display: var(--sd-bottom-star-display);
-    right: 8px;
-    bottom: 8px;
+    right: 0.8vw;
+    bottom: 0.8vw;
 }
 
 .sd-star.left {
     display: var(--sd-left-star-display);
-    bottom: 8px;
-    left: 8px;
+    bottom: 0.8vw;
+    left: 0.8vw;
 }
 
 .sd-star.right {
     display: var(--sd-right-star-display);
-    top: 8px;
-    right: 8px;
+    top: 0.8vw;
+    right: 0.8vw;
 }
 
 /* Топологія */
@@ -692,7 +692,7 @@ figcaption {
     overflow-y: auto;
     background: white;
     border: 1px solid rgb(var(--header-border-color));
-    z-index: 1;
+    z-index: 10;
 }
 
 .search-results a {
@@ -779,17 +779,5 @@ figcaption {
     /* Стаття */
     article {
         width: 100%;
-    }
-
-    /* Складність виживання */
-    .survival-difficulty {
-        width: 153%;
-        margin-bottom: 20px;
-        transform: scale(0.65);
-        transform-origin: top left;
-    }
-
-    .sd-rectangle {
-        padding-right: 260px;
     }
 }

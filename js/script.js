@@ -138,6 +138,14 @@ function fixGitHubPagesPaths() {
     const repositoryName = '/backrooms-ru/'; 
 
     if (window.location.hostname.includes('github.io') || window.location.pathname.startsWith(repositoryName)) {
+        if (typeof backroomsIndex !== 'undefined' && Array.isArray(backroomsIndex)) {
+            backroomsIndex.forEach(item => {
+                if (item.url && item.url.startsWith('/') && !item.url.startsWith(repositoryName)) {
+                    item.url = repositoryName + item.url.slice(1);
+                }
+            });
+        }
+
         const links = document.querySelectorAll('a, img');
 
         links.forEach(el => {
