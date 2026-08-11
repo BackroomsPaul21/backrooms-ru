@@ -91,7 +91,7 @@ header {
     cursor: pointer;
 }
 
-header a, header a:hover {
+header a, header a.active, header a.inactive, header a:hover, header a.active:hover, header a.inactive:hover {
     color: white;
     text-decoration: none;
 }
@@ -128,7 +128,7 @@ main {
 }
 
 /* Бічна навігація */
-main [data-include] {
+main [data-include*="aside.html"] {
     width: 15%;
 }
 
@@ -159,12 +159,12 @@ aside li:first-child {
     color: rgb(var(--interface-link-hover-color));
 }
 
-aside li a {
+aside li a, aside li a.active, aside li a.inactive {
     color: rgb(var(--interface-link-color));
     text-decoration: none;
 }
 
-aside li a:hover {
+aside li a:hover, aside li a.active:hover, aside li a.inactive:hover {
     color: rgb(var(--interface-link-hover-color));
     text-decoration: none;
 }
@@ -184,13 +184,13 @@ footer {
     border-top: 2px solid rgb(var(--interface-border-color));
 }
 
-footer a {
+footer a, footer a.active, footer a.inactive {
     margin: 16px;
     color: rgb(var(--interface-link-color));
     text-decoration: none;
 }
 
-footer a:hover {
+footer a:hover, footer a.active:hover, footer a.inactive:hover {
     color: rgb(var(--interface-link-hover-color));
     text-decoration: none;
 }

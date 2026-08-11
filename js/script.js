@@ -119,7 +119,7 @@ function initiateSearch() {
 }
 
 // === Запуск навігації на мобільних пристроях ===
-function initiateNavigation() {
+function initiateMobileNavigation() {
     const burgerButton = document.querySelector('.burger-menu');
     const sidebar = document.querySelector('aside');
 
@@ -172,7 +172,7 @@ function fixGitHubPagesPaths() {
 }
 
 // === Перевірка активності посилань ===
-document.addEventListener('DOMContentLoaded', () => {
+function checkLinksStatus() {
     document.querySelectorAll('a').forEach(link => {
         const href = link.getAttribute('href');
         if (!href) return;
@@ -200,12 +200,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.add('inactive');
             });
     });
-});
+}
 
 // === Ін'єкція повторюваних елементів ===
 document.addEventListener('DOMContentLoaded', () => {
     const includes = document.querySelectorAll('[data-include]');
-    if (includes.length === 0) return;
+
+    if (includes.length === 0) {
+        fixGitHubPagesPaths();
+        checkLinksStatus();
+        initiateSearch();
+        initiateNavigation();
+        return;
+    }
 
     let loadedCount = 0;
 
@@ -219,8 +226,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (loadedCount === includes.length) {
                     fixGitHubPagesPaths();
+                    checkLinksStatus();
                     initiateSearch();
-                    initiateNavigation();
+                    initiateMobileNavigation();
                 }
             });
     });
